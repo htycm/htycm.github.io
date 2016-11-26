@@ -1,45 +1,49 @@
 <!doctype html>
-
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <title>Htycm Blog</title>
-  <meta name="description" content="The Blog">
-  <meta name="author" content="htycm">
-  
+<head>
+    <meta charset="utf-8">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Htycm Blog</title>
+    <meta name="description" content="The Blog">
+    <meta name="author" content="htycm">
 </head>
 
 <body>
-  <h1>Hello My Blog</h1>
-  
-  <div>
-    <h2>Starting out with Ember.js and Node.js</h2>
-    <h3>Source: </h3>
-      <ol>
-        <li>https://guides.emberjs.com/v2.9.0/tutorial/ember-cli/</li>
-        <li>https://docs.npmjs.com/cli/init</li>
-      </ol>
-    <h3>Setup</h3>
-      <h4>Content</h4>
-      <ol>
-        <li>Setup basic node project</li>
-        <li>Setup basic ember project</li>
-        <li>Establish connection between Ember and Node</li>
-        <li>Build and Run</li>
-      </ol>
-      <h4>Setup basic node project</h4>
-        <p>Create a new directory and run "npm init" to setup package.json file.</p>
-      <h4>Setup basic ember project</h4>
-        <p>In the project directory, run "ember new {project name}" to create a ember project. I named the ember project "client"</p>
-      <h4>Establish connection between Ember and Node</h4>
-        <p>in the project root directory, create a "public" directory, this will be the entry point of both Ember and Node. </p>
-      <h4>Build and Run</h4>
-        <p>Build the Ember project with "ember build --environment=production --output-path=../public/" and run the node project with "node server.js"</p>
-  </div>
-
+    <div class="container">
+        <div class="blog-header">
+            <h1 class="blog-title">Hello My Blog</h1>
+            <p class="blog-description">The journey to do well...</p>
+        </div>
+        <div class="blog-main">
+            <div class="blog-post">
+                <h2 class="blog-post-title">Starting out with Ember.js and Node.js</h2>
+                <h3>Source: </h3>
+                <ol>
+                    <li>https://guides.emberjs.com/v2.9.0/tutorial/ember-cli/</li>
+                    <li>https://docs.npmjs.com/cli/init</li>
+                </ol>
+                <h2>Setup</h2>
+                <h3>Content</h3>
+                <ol>
+                    <li>Setup basic node project</li>
+                    <li>Setup basic ember project</li>
+                    <li>Establish connection between Ember and Node</li>
+                    <li>Build and Run</li>
+                </ol>
+                <h3>Setup basic node project</h3>
+                <p>Create a new directory and run <code>npm init</code> to setup package.json file.</p>
+                <h3>Setup basic ember project</h3>
+                <p>In the project directory, run <code>ember new {project name}</code> to create a ember project. I named the ember project "client"</p>
+                <h3>Establish connection between Ember and Node</h3>
+                <p>in the project root directory, create a "public" directory, this will be the entry point of both Ember and Node. </p>
+                <h3>Build and Run</h3>
+                <p>Build the Ember project with <code>ember build --environment=production --output-path=../public/</code> and run the node project with "node server.js"</p>
+            </div>
+        </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
+
 </html>
