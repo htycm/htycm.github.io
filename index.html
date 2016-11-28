@@ -36,13 +36,44 @@
                         <li>Build and Run</li>
                     </ol>
                     <h3 class="sub-title">Setup basic node project</h3>
-                    <p>Create a new directory and run <code>npm init</code> to setup package.json file.</p>
+                    <p>Create a new directory and run <code>npm init</code> to setup package.json file. In the process of creating the .json file, please make sure to set a server.js file as entry point on the server side. Adding "express", "log4js", and some other dependencies in your package.json file, and run <code>npm install</code> to generate node_modules dirctory.</p>
                     <h3 class="sub-title">Setup basic ember project</h3>
-                    <p>In the project directory we just created, run <code>ember new client</code> to create a ember project named the "client". We can name it however we want, client just makes sense because this is client side code.</p>
+                    <p>In the project directory we just created, run <code>ember new client</code> to create a ember project named the "client". We can name it however we want, client just makes sense because this is client side code. We can go to project/client/app/templates and create application.hbs if it is not yet there, and add something like the following code in the template for testing.
+                    <pre><code>
+                        &lt;div&gt Hello ember from node &lt;/div&gt
+                    </code></pre>
+                    So now, in our project directory, we should have:
+                        <ol>
+                            <li>client</li>
+                            <li>node_modules</li>
+                            <li>server.js</li>
+                            <li>package.json</li>
+                        </ol>
+                    </p>
                     <h3 class="sub-title">Establish connection between Ember and Node</h3>
-                    <p>In the project root directory, create a "public" directory, this will be the entry point of both Ember and Node. </p>
+                    <p>In the project root directory, create a "public" directory, this will be the entry point of both Ember and Node. In server.js file, put down something like 
+                    <pre><code>
+                        var app = require('express')(),
+                        express = require('express'),
+                        http = require('http'),
+                        server = http.Server(app);
+
+                        app.use(express.static('public', {index: 'index.html'}));
+                        server.listen(7000, function () {
+                            console.log('listening on *:7000');
+                        });
+                    </code></pre>
+                    This will tell the node that our .html file is in public direcotry, named "index.html". Now we should have:
+                        <ol>
+                            <li>public</li>
+                            <li>client</li>
+                            <li>node_modules</li>
+                            <li>server.js</li>
+                            <li>package.json</li>
+                        </ol>
+                    </p>
                     <h3 class="sub-title">Build and Run</h3>
-                    <p>Build the Ember project with <code>ember build --environment=production --output-path=../public/</code> and run the node project with "node server.js"</p>
+                    <p>Build the Ember project with <code>ember build --environment=production --output-path=../public/</code> in the client folder. This will create index.html built from ember setup in the public folder. Next we can run the node project with <code>node server.js</code> in the project folder. Then we can navigate to <code>localhost:7000</code> to see our new project.</p>
                 </section>
             </div>
         </div>
